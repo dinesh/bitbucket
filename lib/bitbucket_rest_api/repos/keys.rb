@@ -20,7 +20,7 @@ module BitBucket
       url = if BitBucket.options[:bitbucket_server]
               "/1.0/projects/#{user_name_or_project_key}/repos/#{repo_name.downcase}/ssh"
             else
-              "/1.0/repositories/#{user_name_or_project_key}/#{repo.downcase}/deploy-keys/"
+              "/2.0/repositories/#{user_name_or_project_key}/#{repo.downcase}/deploy-keys/"
             end
 
       response = get_request(url, params)
@@ -53,7 +53,7 @@ module BitBucket
       url = if BitBucket.options[:bitbucket_server]
               "/1.0/projects/#{user_name_or_project_key}/repos/#{repo_name.downcase}/ssh"
             else
-              "/1.0/repositories/#{user_name_or_project_key}/#{repo.downcase}/deploy-keys/"
+              "/2.0/repositories/#{user_name_or_project_key}/#{repo.downcase}/deploy-keys/"
             end
 
       post_request(url, params, options)
@@ -79,7 +79,7 @@ module BitBucket
       normalize! params
       filter! VALID_KEY_PARAM_NAMES, params
 
-      put_request("/1.0/repositories/#{user}/#{sanitize_repository_name(repo)}/deploy-keys/#{key_id}", params)
+      put_request("/2.0/repositories/#{user}/#{sanitize_repository_name(repo)}/deploy-keys/#{key_id}", params)
     end
 
     # Delete key
@@ -97,7 +97,7 @@ module BitBucket
       url = if BitBucket.options[:bitbucket_server]
               "/1.0/projects/#{user_name_or_project_key}/repos/#{repo_name.downcase}/ssh/#{key_id}"
             else
-              "/1.0/repositories/#{user_name_or_project_key}/#{repo.downcase}/deploy-keys/#{key_id}"
+              "/2.0/repositories/#{user_name_or_project_key}/#{repo.downcase}/deploy-keys/#{key_id}"
             end
 
       delete_request(url, params)
