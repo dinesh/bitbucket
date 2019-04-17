@@ -252,7 +252,7 @@ module BitBucket
                 '/1.0/repos'
               end
             else
-              '/2.0/user/repositories'
+              '/2.0/repositories'
             end
       response = get_request(url, params)
 
