@@ -79,7 +79,7 @@ module BitBucket
       normalize! params
       filter! VALID_KEY_PARAM_NAMES, params
 
-      put_request("/2.0/repositories/#{user}/#{sanitize_repository_name(repo)}/deploy-keys/#{key_id}", params)
+      put_request("/1.0/repositories/#{user}/#{sanitize_repository_name(repo)}/deploy-keys/#{key_id}", params)
     end
 
     # Delete key
