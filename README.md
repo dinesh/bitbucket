@@ -4,7 +4,7 @@
 
 [Wiki](https://github.com/vongrippen/bitbucket/wiki) | [RDocs](http://rubydoc.info/github/vongrippen/bitbucket/master/frames)
 
-[ ![Codeship Status for codeship/bitbucket](https://www.codeship.io/projects/88f3e870-c528-0130-f653-22e3e5b4ad67/status?branch=master)](https://www.codeship.io/projects/4690)
+**Warning: not every endpoint in this project is maintained. Use at your own risk.**
 
 A Ruby wrapper for the BitBucket REST API.
 
