@@ -100,7 +100,7 @@ describe BitBucket::Repos do
     before do
       expect(repo).to receive(:request).with(
         :get,
-        '/2.0/user/repositories',
+        '/2.0/repositories',
         {},
         {}
       ).and_return(['repo1', 'repo2' ,'repo3'])
