@@ -6,7 +6,7 @@ describe BitBucket::Repos::Keys do
     before do
       expect(deploy_keys).to receive(:request).with(
         :get,
-        '/2.0/repositories/mock_username/mock_repo/deploy-keys/',
+        '/2.0/repositories/mock_username/mock_repo/deploy-keys',
         {},
         {}
       ).and_return(['key1', 'key2', 'key3'])
@@ -44,7 +44,7 @@ describe BitBucket::Repos::Keys do
     before do
       expect(deploy_keys).to receive(:request).with(
          :put,
-         '/2.0/repositories/mock_username/mock_repo/deploy-keys/1',
+         '/1.0/repositories/mock_username/mock_repo/deploy-keys/1',
          { 'key' => 'mock_ssh_key', 'label' => 'mock_label' },
          {}
        )
