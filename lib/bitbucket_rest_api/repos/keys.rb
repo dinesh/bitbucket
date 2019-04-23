@@ -59,7 +59,7 @@ module BitBucket
               # but has been tested
               "/1.0/projects/#{user_name_or_project_key}/repos/#{repo_name.downcase}/ssh"
             else
-              "/2.0/repositories/#{user_name_or_project_key}/#{repo.downcase}/deploy-keys/"
+              "/2.0/repositories/#{user_name_or_project_key}/#{repo.downcase}/deploy-keys"
             end
 
       post_request(url, params, options)
