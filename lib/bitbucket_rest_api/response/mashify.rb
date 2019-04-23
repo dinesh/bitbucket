@@ -3,11 +3,14 @@
 require 'faraday'
 
 module BitBucket
-  class Response::Mashify < Response
-    dependency 'hashie/mash'
+  require 'hashie/mash'
+  class Mash < ::Hashie::Mash
+    disable_warnings
+  end
 
+  class Response::Mashify < Response
     define_parser do |body|
-      ::Hashie::Mash.new body
+      Mash.new body
     end
 
     def parse(body)
