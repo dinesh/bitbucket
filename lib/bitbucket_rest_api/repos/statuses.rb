@@ -39,6 +39,9 @@ module BitBucket
       })
 
       url = if BitBucket.options[:bitbucket_server]
+              # Endpoint is not referenced in the docs
+              # https://docs.atlassian.com/bitbucket-server/rest/6.0.0/bitbucket-rest.html
+              # but has been tested
               "/rest/build-status/1.0/commits/#{sha}"
             else
               "/2.0/repositories/#{user}/#{sanitize_repository_name(repo)}/commit/#{sha}/statuses/build"
