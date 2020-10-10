@@ -252,7 +252,7 @@ module BitBucket
                 '/1.0/repos'
               end
             else
-              '/2.0/repositories'
+              '/2.0/repositories?pagelen=100'
             end
       response = get_request(url, params)
 
